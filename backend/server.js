@@ -10,9 +10,7 @@ const port = process.env.PORT || 5000; // the port where the server will be on
 app.use(cors());    // this is the cors middleware
 app.use(express.json());    // this is going to allow us to parse json
 
-
 // This is where we connect to the database on MongoDB Atlas
-
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true }
 );
@@ -23,7 +21,6 @@ connection.once('open', () => {
 
 /*  #####  This is the route middleware which actually requires the route 
 files and use them to route whenever user goes to that file  #####    */
-
 const exercisesRouter = require('./routes/exercises');
 const usersRouter = require('./routes/users');
 
